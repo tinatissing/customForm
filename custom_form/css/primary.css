@@ -1,0 +1,25 @@
+#container {
+	background-color: #FFFFFF;
+	margin-right: 300px;
+	padding: 10px;
+}
+
+#bGround {
+	background: center center fixed no-repeat;
+	background-size: cover;
+}
+
+p {
+	line-height: 200%;
+}
+
+footer {
+	text-align: center;
+	line-height: 250%;
+	border-top: double 4px;
+}
+
+.button {
+	margin: 10px 10px 10px 10px;
+	font-weight: bold;
+}

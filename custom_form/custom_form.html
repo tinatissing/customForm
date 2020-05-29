@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+    <title>Custom Form</title>
+    
+    <link rel="stylesheet" href="css/primary.css">
+    
+    <script>
+	
+	function collectData() {
+		
+		var userName = document.webValue.theName.value;
+		sessionStorage.setItem("webName", userName);
+		
+		var userTelNum = document.webValue.theTelNum.value;
+		sessionStorage.setItem("webTelNum", userTelNum);
+		
+		var userEmail = document.webValue.theEmail.value;
+		sessionStorage.setItem("webEmail", userEmail);
+		
+		var textColor = document.webValue.theColor.value;
+		sessionStorage.setItem("webColor", textColor);
+		
+		if (document.getElementById("black").checked) {
+			var background = "black";
+			sessionStorage.setItem("bColor", background);
+			location = "process_page.html";
+		}
+		else if (document.getElementById("red").checked) {
+			var background = "red";
+			sessionStorage.setItem("bColor", background);
+			location = "process_page.html";
+		}
+		else if (document.getElementById("blue").checked) {
+			var background = "blue";	
+			sessionStorage.setItem("bColor", background);
+			location = "process_page.html";
+		}
+		else if (document.getElementById("green").checked) {
+			var background = "green";	
+			sessionStorage.setItem("bColor", background);
+			location = "process_page.html";
+		}
+		
+		return false;
+		
+	}
+	
+	</script>
+</head>
+
+<body>
+	
+    <h1>Create a Custom Web Page Design!</h1>
+
+	<form name="webValue" method="post" onSubmit="return collectData()">
+    	<p>
+        <label for="theName">What is the name of your web page?</label>
+        <input type="text" name="webName" id="theName" autofocus required>
+        </p>
+        
+        <p>
+        <label for="theTelNum">Enter the phone number you want people to contact you with.</label>
+        <input type="tel" name="webTel" id="theTelNum">
+        </p>
+        
+        <p>
+        <label for="theEmail">Enter the email you want people to contact you with.</label>
+        <input type="email" name="webEmail" id="theEmail">
+        </p>
+        
+        <h3>Choose a colour theme for the background of your web page.</h3>
+        <p><input type="radio" id="black" name="background" value="black" required>Black</p>
+        <p><input type="radio" id="red" name="background" value="red">Red</p>
+        <p><input type="radio" id="blue" name="background" value="blue">Blue</p>
+        <p><input type="radio" id="green" name="background" value="green">Green</p>
+        
+        <p>
+        <label for="theColor">Enter the text colour for your web page.</label>
+        <input type="color" name="webColor" id="theColor" required>
+        </p>
+        
+        <button type="submit" class="button">Process Form</button>
+        <button type="reset" class="button">Reset Form</button>
+    
+    </form>
+</body>
+</html>
